@@ -33,18 +33,10 @@ function App() {
       <h1 className="heading">
         Image Gallery with <span className="highlight">React.js</span>
       </h1>
-      <div>
-        {data.map((data)=>{
-          <section className="gallery">
-        <img src={data.map((singleData)=>{
-          return singleData.src
-        })} alt={
-          data.map((singleData)=>{
-            return singleData.alt;
-          })
-        } />
-      </section>
-        })}
+      <div className="gallery">
+        {data.map((singleData, index)=>(<section key={index} className="gallery-item">
+          <img src={singleData.src} alt={singleData.alt} />
+        </section>))}       
       </div>
     </main>
   );
